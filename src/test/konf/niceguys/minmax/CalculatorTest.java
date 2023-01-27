@@ -1,7 +1,6 @@
 package konf.niceguys.minmax;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -38,4 +37,42 @@ class CalculatorTest {
 
         assertEquals(42,calc.min(42,42));
     }
+
+    @Test
+    void maxReturnsLeftValueBigger() {
+
+        assertEquals(5,calc.max(5,3));
+        assertEquals(7,calc.max(7,4));
+    }
+
+    @Test
+    void maxReturnsRightValueBigger() {
+        assertEquals(8, calc.max(7,8));
+        assertEquals(10, calc.max(7,10));
+    }
+
+    @Test
+    void maxReturnsValueIfGivenValueIsEqual() {
+        assertEquals(18, calc.max(18,18));
+        assertEquals(12, calc.max(12,12));
+
+    }
+
+    @Test
+    void compareLhsBiggerThanRhs() {
+        assertTrue(calc.compare(10,5) > 0);
+
+    }
+    @Test
+    void compareLhsSmallerThanRhs() {
+        assertTrue(calc.compare(5,10) < 0);
+
+    }
+
+    @Test
+    void compareLhsEqualToRhs() {
+        assertTrue(calc.compare(10,10) == 0);
+
+    }
+
 }
