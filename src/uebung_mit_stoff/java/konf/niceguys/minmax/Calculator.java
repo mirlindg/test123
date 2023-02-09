@@ -30,4 +30,10 @@ public class Calculator {
         } return 0;
 
     }
+
+    public int add(int lhs, int rhs){
+
+        return lhs + rhs;
+
+    }
 }

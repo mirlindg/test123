@@ -1,5 +1,6 @@
 package konf.niceguys.minmax;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -72,7 +73,25 @@ class CalculatorTest {
     @Test
     void compareLhsEqualToRhs() {
         assertTrue(calc.compare(10,10) == 0);
+        assertEquals(0,calc.compare(10,10));
 
     }
 
+
+
+
+
+    // neue Testfälle
+
+
+    @Test
+    void credit() {
+
+        int account = 100;
+
+        Assertions.assertEquals(210, calc.add(100,110));
+        Assertions.assertTrue(330 == calc.add(210,120));
+        Assertions.assertTrue(0 == calc.add(100,100));
+
+    }
 }
